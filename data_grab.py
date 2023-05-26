@@ -1,7 +1,11 @@
 import json
 import requests
 import pandas as pd
+import ssl
 from bs4 import BeautifulSoup
+
+ssl._create_default_https_context = ssl._create_unverified_context
+headers = { 'User-Agent': 'Mozilla/5.0 (Windows NT 6.0; WOW64; rv:24.0) Gecko/20100101 Firefox/24.0' }
 
 # Get names and addresses
 acc_url = "https://www.queensu.ca/facilities/accessibility/building-directory"
@@ -159,9 +163,10 @@ for x in range(len(data)):
         elif p.find("Entrances") != -1 or \
             (p.find("North") != -1 and p.find("Northern") == -1) or \
             (p.find("East")  != -1 and p.find("Eastern")  == -1) or \
-            (p.find("West")  != -1 and p.find("Western")  == -1) or \
+            (p.find("West")  != -1 and p.find("Western")  == -1 and p.find("Street West")  == -1) or \
             (p.find("South") != -1 and p.find("Southern") == -1) or \
             p.find("Other Entrances") != -1 or \
+            p.find("Alternative Entrance") != -1 or \
             p.find("Other entrances") != -1:
 
             entrances.append(p.replace("Entrances: ", ""))
@@ -199,12 +204,12 @@ for x in range(len(data)):
     long = float(temp[1]) + .0021
 
     # Get co-ordinates (with name)
-    coord_resp = requests.get(("http://localhost:8080/?addressdetails=1&q=" + name.replace("ASUS Offices", "ASUS Core") + ",+kingston,+ontario&format=json&limit=1").lower().replace(" ", "+"))
+    coord_resp = requests.get(("http://localhost:8081/?addressdetails=1&q=" + name.replace("ASUS Offices", "ASUS Core") + ",+kingston,+ontario&format=json&limit=1").lower().replace(" ", "+"), headers=headers)
     coord_resp = coord_resp.json()
 
     # If grabbing with the name failed, grab with just address (may not be centred correctly)
     if (coord_resp == []):
-        coord_resp = requests.get(("http://localhost:8080/?addressdetails=1&q=" + str(data.iloc[x, 1]) + ",+kingston&format=json&limit=1").lower().replace(" ", "+"))
+        coord_resp = requests.get(("http://localhost:8081/?addressdetails=1&q=" + str(data.iloc[x, 1]) + ",+kingston&format=json&limit=1").lower().replace(" ", "+"), headers=headers)
         coord_resp = coord_resp.json()
     
     lat = 0.0

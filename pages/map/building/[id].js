@@ -22,17 +22,17 @@ export default function Building({ coords, buildingData }) {
                         <Typography level="h2">{buildingData.addr}</Typography>
                         <Carousel images={buildingData.images} />
                         <Card variant="outlined" className="fixed-size-scroll-window-hide" sx={{maxHeight: 400, overflow: "scroll"}}>
-                            {(buildingData.location != null) ? (<><Typography level="h3">Location</Typography><Typography>{buildingData.location}</Typography></>) : (<></>)}
-                            {(buildingData.entrances != []) ? (<><Typography level="h3">Entrances</Typography>{buildingData.entrances.map((value) => (<Typography level="p" key={value}>{value}</Typography>))}</>) : (<></>)}
-                            {(buildingData.corridors != null) ? (<><Typography level="h3">Corridors</Typography><Typography>{buildingData.corridors}</Typography></>) : (<></>)}
-                            {(buildingData.wayfinding != null) ? (<><Typography level="h3">Wayfinding</Typography><Typography>{buildingData.wayfinding}</Typography></>) : (<></>)}
-                            {(buildingData.washrooms != null) ? (<><Typography level="h3">Washrooms</Typography><Typography>{buildingData.washrooms}</Typography></>) : (<></>)}
-                            {(buildingData.fountains != null) ? (<><Typography level="h3">Fountains</Typography><Typography>{buildingData.fountains}</Typography></>) : (<></>)}
-                            {(buildingData.classrooms != null) ? (<><Typography level="h3">Classrooms</Typography><Typography>{buildingData.classrooms}</Typography></>) : (<></>)}
-                            {(buildingData.elevators != null) ? (<><Typography level="h3">Elevators</Typography><Typography>{buildingData.elevators}</Typography></>) : (<></>)}
-                            {(buildingData.services != null) ? (<><Typography level="h3">Services</Typography><Typography>{buildingData.services}</Typography></>) : (<></>)}
-                            {(buildingData.parking != null) ? (<><Typography level="h3">Parking</Typography><Typography>{buildingData.parking}</Typography></>) : (<></>)}
-                            {(buildingData.access != []) ? (<><Typography level="h3">Other</Typography>{buildingData.access.map((value) => (<Typography level="p" key={value}>{value}</Typography>))}</>) : (<></>)}
+                            {(buildingData.location != "") ? (<><Typography level="h3">Location</Typography><Typography>{buildingData.location}</Typography></>) : (<></>)}
+                            {(buildingData.entrances != [] && buildingData.entrances != "") ? (<><Typography level="h3">Entrances</Typography>{buildingData.entrances.map((value) => (<Typography level="p" key={value}>{value}</Typography>))}</>) : (<></>)}
+                            {(buildingData.corridors != "") ? (<><Typography level="h3">Corridors</Typography><Typography>{buildingData.corridors}</Typography></>) : (<></>)}
+                            {(buildingData.wayfinding != "") ? (<><Typography level="h3">Wayfinding</Typography><Typography>{buildingData.wayfinding}</Typography></>) : (<></>)}
+                            {(buildingData.washrooms != "") ? (<><Typography level="h3">Washrooms</Typography><Typography>{buildingData.washrooms}</Typography></>) : (<></>)}
+                            {(buildingData.fountains != "") ? (<><Typography level="h3">Fountains</Typography><Typography>{buildingData.fountains}</Typography></>) : (<></>)}
+                            {(buildingData.classrooms != "") ? (<><Typography level="h3">Classrooms</Typography><Typography>{buildingData.classrooms}</Typography></>) : (<></>)}
+                            {(buildingData.elevators != "") ? (<><Typography level="h3">Elevators</Typography><Typography>{buildingData.elevators}</Typography></>) : (<></>)}
+                            {(buildingData.services != "") ? (<><Typography level="h3">Services</Typography><Typography>{buildingData.services}</Typography></>) : (<></>)}
+                            {(buildingData.parking != "") ? (<><Typography level="h3">Parking</Typography><Typography>{buildingData.parking}</Typography></>) : (<></>)}
+                            {(buildingData.access != [] && buildingData.access[0] != " " && buildingData.access != "") ? (<><Typography level="h3">Other</Typography>{buildingData.access.map((value) => (<Typography level="p" key={value}>{value}</Typography>))}</>) : (<></>)}
                         </Card>
                     </Stack>
                 </Stack>

@@ -1,1 +1,35 @@
-{"name": "Queen's Athletics Recreation Centre", "coords": [44.229403250000004, -76.49393688035826], "addr": "284 Earl Street", "images": [{"src": "/images/buildings/athletics-and-recreation-centre-arc-0.jpg", "alt": "[ARC]"}], "desc": ["The ARC, which opened in December 2009, is a state of the art fitness facility within the Queen's Centre with a wide variety of programs and activities for the campus and Kingston community.", "The ARC features a 38m x 25m pool, gymnasiums, basketball and volleyball courts, squash/racquetball courts, dance studios, and extensive cardio and weight facilities...", "Learn more about the ARC facilities..."], "location": "", "entrances": [], "corridors": "", "wayfinding": "", "washrooms": "", "fountains": "", "classrooms": "", "elevators": "", "services": "", "parking": "", "desc_src": "https://www.queensu.ca/encyclopedia/a/athletics-and-recreation-centre-arc", "access": ["This building directory entry is under construction", " "], "map": "https://goo.gl/maps/svAD9EDNgRG3ZrUV8"}
+{
+  "name": "Queen's Athletics Recreation Centre",
+  "coords": [
+    44.229403250000004,
+    -76.49393688035826
+  ],
+  "addr": "284 Earl Street",
+  "images": [
+    {
+      "src": "/images/buildings/athletics-and-recreation-centre-arc-0.jpg",
+      "alt": "[ARC]"
+    }
+  ],
+  "desc": [
+    "The ARC, which opened in December 2009, is a state of the art fitness facility within the Queen's Centre with a wide variety of programs and activities for the campus and Kingston community.",
+    "The ARC features a 38m x 25m pool, gymnasiums, basketball and volleyball courts, squash/racquetball courts, dance studios, and extensive cardio and weight facilities...",
+    "Learn more about the ARC facilities..."
+  ],
+  "location": "",
+  "entrances": [],
+  "corridors": "",
+  "wayfinding": "",
+  "washrooms": "",
+  "fountains": "",
+  "classrooms": "",
+  "elevators": "",
+  "services": "",
+  "parking": "",
+  "desc_src": "https://www.queensu.ca/encyclopedia/a/athletics-and-recreation-centre-arc",
+  "access": [
+    "This building directory entry is under construction",
+    " "
+  ],
+  "map": "https://goo.gl/maps/svAD9EDNgRG3ZrUV8"
+}

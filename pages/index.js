@@ -13,8 +13,8 @@ export default function HomePage() {
                     </AspectRatio>
                     <Typography level="h1">Accessible Maps</Typography>
 
-                    <Link href="/map/main"><Button variant="solid" sx={{width: 400}}>View Main Campus</Button></Link>
-                    <Link href="/map/west"><Button variant="solid" sx={{width: 400}}>View West Campus</Button></Link>
+                    <Link href="/map/main"><Button variant="solid" sx={{width: "100%"}}>View Main Campus</Button></Link>
+                    <Link href="/map/west"><Button variant="solid" sx={{width: "100%"}}>View West Campus</Button></Link>
                 </Stack>
             </Stack>
         </Layout>
